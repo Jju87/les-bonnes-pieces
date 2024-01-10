@@ -10,11 +10,15 @@ nomElement.innerText = article.nom;
 const prixElement = document.createElement("p");
 prixElement.innerText = `Prix: ${article.prix} € (${article.prix < 35 ? "€" : "€€€"})`
 const categorieElement = document.createElement("p");
-categorieElement.innerText = article.categorie;
 categorieElement.innerText = article.categorie ?? "(Aucune catégorie)";
+const descriptionElement = document.createElement("p");
+descriptionElement.innerText = article.description ?? "(Aucune description pour le moment)";
+const disponibiliteElement = document.createElement("p");
+disponibiliteElement.innerText = article.disponibilite ? "En stock" : "En rupture de stock";
+//j'avais écrit ça **************article.disponibilite = true ? "En stock" : "En rupture de stock"; Pas la peine de mettre le = true!
 
 const ficheProduit = document.querySelector(".fiches");
-ficheProduit.append(imageElement, nomElement, prixElement, categorieElement);
+ficheProduit.append(imageElement, nomElement, prixElement, categorieElement, descriptionElement, disponibiliteElement);
 
 
 
