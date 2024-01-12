@@ -14,9 +14,19 @@
 		<main>
 			<!-- Menu de recherche -->
 			<section class="filtres">
+				<form class="range-container">				
+				<label for="price-range">Ordre de prix</label><br />
+				<input type="range" id="price-range" name="price-range" list="values" min="0" max="60" step="5"/>
+                <datalist id="values">
+                  <option value="0" label="0€"></option>
+                  <option value="15" label="15€"></option>
+                  <option value="30" label="30€"></option>
+                  <option value="45" label="45€"></option>
+                  <option value="60" label="60€"></option>
+                </datalist>
+				</form>
 				<h3>Filtres</h3>
 				<button class="btn-trier">Trier par prix décroissant</button>
-				<br>
 				<button class="btn-croissant">Trier par ordre de prix croissant</button>
 				<button class="btn-descriptions">Afficher uniquement les descriptions</button>
 				<button class="btn-filtrer">Filtrer les pièces non abordables</button>

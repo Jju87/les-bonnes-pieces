@@ -66,6 +66,15 @@ async function fetchDataAndGeneratePieces() {
 
     });
 
+    const priceRange = document.getElementById("price-range");
+    priceRange.addEventListener("input", () =>{
+        const piecesFiltrees = pieces.filter(function(piece){
+            return piece.prix <= priceRange.value})
+        
+        document.querySelector(".fiches").innerHTML="";
+        genererPieces(piecesFiltrees);
+        })
+
     
 }
 
