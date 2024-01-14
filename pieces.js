@@ -1,3 +1,6 @@
+const reponse = await fetch("pieces-autos.json");
+const pieces = await reponse.json();
+
 // Wrap your code in an async function
 async function fetchDataAndGeneratePieces() {
     // Récupération des pièces depuis le fichier JSON
@@ -73,9 +76,7 @@ async function fetchDataAndGeneratePieces() {
         
         document.querySelector(".fiches").innerHTML="";
         genererPieces(piecesFiltrees);
-        })
-
-    
+        })    
 }
 
 // Call the async function
@@ -87,7 +88,6 @@ fetchDataAndGeneratePieces();
  const abordablesElement = document.querySelector(".abordables")
  const listNames = document.createElement("ul")
 
- const describe = pieces.map(piece => piece.description)
  const price = pieces.map(piece => piece.prix)
 
  
